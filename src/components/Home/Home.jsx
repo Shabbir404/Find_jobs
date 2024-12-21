@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import userPng from "../../assets/user.png"
 import "./Home.css"
+import chipPng from "../../assets/chip.png"
+import marketingPng from "../../assets/marketing.png"
+import creativePng from "../../assets/creative.png"
+import accountPng from "../../assets/accounts.png"
+import FeaturedJobs from "../FeaturedJobs/FeaturedJobs";
+
 
 const Home = () => {
     return (
@@ -30,9 +36,41 @@ const Home = () => {
                 <span className="text-gray-400">Explore thousands of job opportunities with all the information you need. Its your future</span>
             </div>
 
-            <div>
+
+            {/* all jobs catagory with icons */}
+            <div className="flex align-middle justify-center mt-12 mb-12">
+                <Link className="hover-Icons-Caragory duration-200 p-4 ">
+                    <div className="p-4">
+                        <img src={accountPng} alt="" />
+                        <h3 className="font-bold mt-4">Account and finance jobs.</h3>
+                        <span className="text-gray-400 mt-1">250+ jobs available.</span>
+                    </div>
+                </Link>
+                <Link className="hover-Icons-Caragory duration-300 p-4 ">
+                    <div className="p-4">
+                        <img src={chipPng} alt="" />
+                        <h3 className="font-bold mt-4">Creative Design jobs</h3>
+                        <span className="text-gray-400 mt-1">150+ jobs available.</span>
+                    </div>
+                </Link>
+                <Link className="hover-Icons-Caragory duration-300 p-4 ">
+                    <div className="p-4">
+                        <img src={marketingPng} alt="" />
+                        <h3 className="font-bold mt-4">Marketing and seals jobs.</h3>
+                        <span className="text-gray-400 mt-1">100+ jobs available.</span>
+                    </div>
+                </Link>
+                <Link className="hover-Icons-Caragory duration-300 p-4 ">
+                    <div className="p-4">
+                        <img src={creativePng} alt="" />
+                        <h3 className="font-bold mt-4">Engineering jobs</h3>
+                        <span className="text-gray-400 mt-1">50+ jobs available.</span>
+                    </div>
+                </Link>
 
             </div>
+
+            <FeaturedJobs></FeaturedJobs>
 
         </div>
 
