@@ -14,6 +14,7 @@ import Statistics from './components/Statistics/Statistics.jsx';
 import Jobs from './components/Jobs/Jobs.jsx';
 import Blogs from './components/Blogs/Blogs.jsx';
 import Errors from './components/Error/Errors.jsx';
+import Jobdata from './components/JobsDetails/Jobdata.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blogs></Blogs>
+      },
+      {
+        path: '/job/:id',
+        element: <Jobdata></Jobdata>,
+
       }
     ]
   },

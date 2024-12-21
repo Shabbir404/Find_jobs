@@ -1,7 +1,24 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
+    const {
+        id,
+        logo,
+        job_title,
+        company_name,
+        remote_or_onsite,
+        location,
+        job_type,
+        salary,
+        job_description,
+        job_responsibility,
+        educational_requirements,
+        experiences,
+        contact_information
+    } = job;
+
     return (
         <div className="w-auto h-auto">
 
@@ -18,10 +35,14 @@ const Job = ({ job }) => {
                     <p className="ml-5 flex"><RiMoneyDollarCircleLine className="mt-0.5 mr-1"></RiMoneyDollarCircleLine>
                         {job.salary}</p>
                 </div>
-                <button className="btn text-white bg-gradient-to-r
-                from-indigo-500 via-purple-500 to-pink-500 mt-4">Viwe Details</button>
+                <Link to={`/job/${id}`} className="btn text-white bg-gradient-to-r
+                from-indigo-500 via-purple-500 to-pink-500 mt-4">Viwe Details
+                </Link>
             </div>
 
+            <div>
+            
+            </div>
 
         </div>
     );
