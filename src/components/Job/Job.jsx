@@ -41,7 +41,7 @@ const Job = ({ job }) => {
             </div>
 
             <div>
-            
+
             </div>
 
         </div>
