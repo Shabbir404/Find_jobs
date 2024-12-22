@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import { saveLocal } from '../Utility/local'
 
 const Jobdata = () => {
     const jobs = useLoaderData();
@@ -19,8 +21,11 @@ const Jobdata = () => {
         educational_requirements,
         experiences,
         contact_information: { phone, email, address } } = job;
-    console.log(job);
 
+    const notify = () => {
+        toast('apply successful')
+        saveLocal(id)
+    };
     return (
         <div>
             <h1 className='text-4xl text-center font-bold mt-10'>Job Details</h1>
@@ -97,10 +102,12 @@ const Jobdata = () => {
                         </p>
                     </div>
                 </footer>
-
-                <button className="mt-6 w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                    Apply Now
-                </button>
+                <div>
+                    <button onClick={notify} className="mt-6 w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        Apply Now
+                    </button>
+                    <ToastContainer></ToastContainer>
+                </div>
             </article>
         </div>
     );
