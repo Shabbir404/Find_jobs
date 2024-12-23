@@ -24,7 +24,7 @@ const Jobdata = () => {
 
     const notify = () => {
         toast('apply successful')
-        saveLocal(id)
+        saveLocal(idInt)
     };
     return (
         <div>
